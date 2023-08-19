@@ -1,0 +1,10 @@
+{
+    "app_id": "378249",
+    "client_id": "Iv1.58d0c2313186de51",
+    "client_secret": "dbc25de7227320a698fdee78306895b2a9552578",
+
+    "auth_uri": "https://github.com/login/oauth/authorize",
+    "token_uri": "https://github.com/login/oauth/access_token",
+    "profile_uri": "https://api.github.com/user",
+    "redirect_uri": "http://localhost:3000/github/auth/callback"
+}

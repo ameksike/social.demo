@@ -1,0 +1,10 @@
+{
+    "app_id": "834931227845955",
+    "client_id": "834931227845955",
+    "client_secret": "3e9fc3dec2e6d686f05bdcef1ec42c71",
+    
+    "auth_uri": "https://www.facebook.com/v12.0/dialog/oauth",
+    "token_uri": "https://graph.facebook.com/v12.0/oauth/access_token",
+    "profile_uri": "https://graph.facebook.com/me",
+    "redirect_uri": "http://localhost:3000/facebook/auth/callback"
+}

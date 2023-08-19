@@ -1,0 +1,13 @@
+{
+    "web": {
+        "client_id": "903347331590-svir5ddvmb3ei1mur0j6dmegecjikj1j.apps.googleusercontent.com",
+        "project_id": "ksike-396415",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "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",
+        "redirect_uris": [
+            "http://localhost:3000/google/auth/callback"
+        ]
+    }
+}

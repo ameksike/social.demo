@@ -1,0 +1,54 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/.nyc_output
+
+#logs
+/logs
+*.log
+
+# old items
+*.old
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*/mongo/*
+# resources
+resources/EFF/
+resources/FPs/
+resources/backup/
+resources/config/
+tmp
+external_libs
+eff.code-workspace
+dist/
+.vscode/settings.json
+.scannerwork/
+
+# local
+**.local
+environments/local.env
+
+# IDE
+.idea/
+
+# lock files
+yarn.lock
+package-lock.json
