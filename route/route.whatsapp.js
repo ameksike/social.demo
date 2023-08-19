@@ -5,6 +5,7 @@ const { sendMessage, getTextMessageInput } = require("../utl/messageHelper");
 
 // https://developers.facebook.com/blog/post/2022/10/31/sending-messages-with-whatsapp-in-your-nodejs-application/
 // https://www.youtube.com/watch?v=6bAp_cvZet8
+// https://github.com/leifermendez/api-whatsapp-ts/blob/main/src/infrastructure/repositories/ws.external.ts
 
 app.get('/', function (req, res, next) {
 
