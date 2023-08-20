@@ -1,4 +1,13 @@
 {
-    "token_bot": "",
-    "chat_id": ""
+    "token_bot": "6221267354:AAFEbBvWTrNlMAvWuXo8PyyVBN2BYKICI50",
+    "chat_id": "@Yanet_TPP",
+    "uri": "t.me/ksike_bot",
+    "docs": "https://core.telegram.org/bots/api",
+    "redirect_uris": "http://localhost:3000/telegram/on/message",
+
+    "url_user": "https://api.telegram.org/bot{BOT_TOKEN}/getChat?username={USRID}",
+    "url_info": "https://api.telegram.org/bot{BOT_TOKEN}/getMe",
+    "url_update": "https://api.telegram.org/bot{BOT_TOKEN}/getUpdates",
+    "url_send": "https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+    "url_hook": "https://api.telegram.org/bot{BOT_TOKEN}/setWebhook"
 }

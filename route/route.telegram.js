@@ -1,26 +1,49 @@
 const app = require('express').Router()
-const axios = require('axios');
 const cfg = require("../cfg/config.telegram.json");
+const tel = require("../utl/telegram");
 
+// https://core.telegram.org/bots
+// https://www.youtube.com/watch?v=GEydlPTqp6E
+// https://core.telegram.org/bots#how-do-i-create-a-bot
 
 // Ruta para enviar mensajes de Telegram
 app.get('/', async (req, res) => {
-    const botToken = cfg.token_bot;
-    const chatId = req.query.recipient || cfg.chat_id; // Puede ser tu propio chat o un grupo
+    const chatId = req.query.recipient || cfg.chat_id;
     const message = req.query.text || 'Welcome to the Movie Ticket Demo App for Node.js!';
+    const response = await tel.send(message, chatId);
+    console.log('Mensaje enviado:', response);
+    return response ? res.send('Mensaje enviado exitosamente.') : res.status(500).send('Error al enviar el mensaje.');
+});
 
+// Ruta para enviar mensajes de Telegram
+app.get('/on/message', async (req, res) => {
     try {
-        const response = await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-            chat_id: chatId,
-            text: message
-        });
-
-        console.log('Mensaje enviado:', response.data);
-        res.send('Mensaje enviado exitosamente.');
+        const update = req.body;
+        if (update.message) {
+            const chatId = update.message.chat.id;
+            const messageText = update.message.text;
+            // Maneja el mensaje recibido
+            console.log(`Mensaje recibido de ${chatId}: ${messageText}`);
+        }
     } catch (error) {
         console.error('Error al enviar el mensaje:', error.message);
         res.status(500).send('Error al enviar el mensaje.');
     }
+});
+
+app.get('/info', async (req, res) => {
+    const response = await tel.info();
+    return response ? res.send(response) : res.status(500).send('Error on set info.');
+});
+
+app.get('/updates', async (req, res) => {
+    const response = await tel.updates();
+    return response ? res.send(response) : res.status(500).send('Error on set info.');
+});
+
+app.get('/config', async (req, res) => {
+    const response = await tel.hook(cfg.redirect_uris);
+    return response ? res.send(response) : res.status(500).send('Error on set config.');
 });
 
 module.exports = app;

@@ -1,7 +1,6 @@
 const app = require('express').Router()
-const axios = require('axios');
 const cfg = require("../cfg/config.whatsapp");
-const { sendMessage, getTextMessageInput } = require("../utl/messageHelper");
+const { sendMessage, getTextMessageInput } = require("../utl/whatsapp");
 
 // https://developers.facebook.com/blog/post/2022/10/31/sending-messages-with-whatsapp-in-your-nodejs-application/
 // https://www.youtube.com/watch?v=6bAp_cvZet8
