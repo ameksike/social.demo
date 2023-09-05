@@ -1,6 +1,9 @@
 const app = require('express').Router()
 const cfg = require("../cfg/config.telegram.json");
-const tel = require("../utl/telegram");
+const kshook = require("kshook");
+const tel = new kshook.driver.Telegram({
+    tokenBot: cfg.token_bot
+});
 
 // https://core.telegram.org/bots
 // https://www.youtube.com/watch?v=GEydlPTqp6E
@@ -10,7 +13,7 @@ const tel = require("../utl/telegram");
 app.get('/', async (req, res) => {
     const chatId = req.query.recipient || cfg.chat_id;
     const message = req.query.text || 'Welcome to the Movie Ticket Demo App for Node.js!';
-    const response = await tel.send(message, chatId);
+    const response = await tel.send({ message, chatId });
     console.log('Mensaje enviado:', response);
     return response ? res.send('Mensaje enviado exitosamente.') : res.status(500).send('Error al enviar el mensaje.');
 });
